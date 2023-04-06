@@ -88,11 +88,16 @@ namespace Nilai_Mahasiswa
                                         }
                                     }
                                     catch 
-                                    { 
+                                    {
+                                        Console.WriteLine("\nCheck for the value entered.");
                                     }
                                 }
                             }
-
+                        default:
+                            {
+                                Console.WriteLine("Invalid Option");
+                            }
+                            break;
                     }
                
                 }
