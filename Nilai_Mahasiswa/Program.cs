@@ -47,7 +47,8 @@ namespace Nilai_Mahasiswa
                     }
                
                 }
-                catch { }
+                catch {
+                }
             }
         }
     }
