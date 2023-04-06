@@ -103,6 +103,10 @@ namespace Nilai_Mahasiswa
                 }
                 catch 
                 {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Tidak Dapat Mengkases Database Menggunakan User Tersebut\n");
+                    Console.ResetColor();
                 }
             }
         }
