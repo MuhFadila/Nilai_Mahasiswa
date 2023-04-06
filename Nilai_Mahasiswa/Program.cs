@@ -27,7 +27,7 @@ namespace Nilai_Mahasiswa
                     string pass = Console.ReadLine();
                     Console.WriteLine("Masukan database tujuan : ");
                     string db = Console.ReadLine();
-                    Console.Write("\nKetik K untuk Terhubung ke Database");
+                    Console.Write("\nKetik K untuk Terhubung ke Database : ");
                     char chr = Convert.ToChar(Console.ReadLine());
                     switch (chr)
                     {
@@ -35,7 +35,7 @@ namespace Nilai_Mahasiswa
                             {
                                 MySqlConnection conn;
                                 string connectionString;
-                                connectionString = "SERVER=" + server + ";DATABASE=" + db + ";UserID=" + user + ";PASSWORD=" + pass + ";Port=3306";
+                                connectionString = "SERVER=LAPTOP-U3C1SDFR\\MUHAMMADFADILA" + server + ";DATABASE=ProdiTI.Mahasiswa" + db + ";UserID=Mahasiswa" + user + ";PASSWORD=123" + pass + ";Port=3306";
 
                                 conn = new MySqlConnection(connectionString);
                                 conn.Open();
