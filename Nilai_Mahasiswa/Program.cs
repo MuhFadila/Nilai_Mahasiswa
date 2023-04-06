@@ -41,13 +41,24 @@ namespace Nilai_Mahasiswa
                                 Console.Clear();
                                 while (true)
                                 {
-
+                                    try
+                                    {
+                                        Console.WriteLine("\nMenu");
+                                        Console.WriteLine("1. Melihat Seluruh Data");
+                                        Console.WriteLine("2. Tambah Data");
+                                        Console.WriteLine("3. Keluar");
+                                        Console.WriteLine("\nEnter your Choice (1-3): ");
+                                        char ch = Convert.ToChar(Console.ReadLine());
+                                        switch (ch) { }
+                                    }
+                                    catch { }
                                 }
                             }
                     }
                
                 }
-                catch {
+                catch 
+                {
                 }
             }
         }
