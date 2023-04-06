@@ -80,6 +80,11 @@ namespace Nilai_Mahasiswa
                                                     catch { }
                                                 }
                                                 break;
+                                            case '3':
+                                                {
+                                                    conn.Close();
+                                                    return;
+                                                }
                                         }
                                     }
                                     catch 
@@ -115,13 +120,13 @@ namespace Nilai_Mahasiswa
         public void insert(string NIM, string NmaMhs, string TglLahir, MySqlConnection con)
         {
             string str;
-            str = "insert into ProdiTI.MAHASISWA (NIM, NamaMhs, AlamatMhs, Sex, PhoneMhs)" + " values(@nim,nma,alamat,jk,phn)";
+            str = "insert into ProdiTI.MAHASISWA (NIM, NamaMhs, TglLahir)" + " values(@nim,nma,TglLahir)";
             MySqlCommand cmd = new MySqlCommand(str, con);
             cmd.CommandText = str;
 
             cmd.Parameters.Add(new MySqlParameter("nim", NIM));
             cmd.Parameters.Add(new MySqlParameter("nma", NmaMhs));
-            cmd.Parameters.Add(new MySqlParameter("alamat", TglLahir));
+            cmd.Parameters.Add(new MySqlParameter("tglLahir", TglLahir));
      
             cmd.ExecuteNonQuery();
             Console.WriteLine("Data Berhasil Ditambahkan");
