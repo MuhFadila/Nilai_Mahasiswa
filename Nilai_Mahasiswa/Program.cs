@@ -60,6 +60,26 @@ namespace Nilai_Mahasiswa
                                                     pr.baca(conn);
                                                 }
                                                 break;
+                                            case '2':
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine("INPUT DATA MAHASISWA\n");
+                                                    Console.WriteLine("Masukan NIM : ");
+                                                    string NIM = Console.ReadLine();
+                                                    Console.WriteLine("Masukan NIM Mahasiswa : ");
+                                                    string NmaMhs = Console.ReadLine();
+                                                    Console.WriteLine("Masukan Nama Mahasiswa : ");
+                                                    string TglLahir = Console.ReadLine();
+                                                    Console.WriteLine("Masukan Tanggal Lahir Mahasiswa : ");
+
+                                                    try
+                                                    {
+                                                        pr.insert(NIM, NmaMhs, TglLahir, conn);
+                                                        conn.Close();
+                                                    }
+                                                    catch { }
+                                                }
+                                                break;
                                         }
                                     }
                                     catch 
@@ -91,6 +111,20 @@ namespace Nilai_Mahasiswa
                 }
                 Console.Write("\n");
             }
+        }
+        public void insert(string NIM, string NmaMhs, string TglLahir, MySqlConnection con)
+        {
+            string str;
+            str = "insert into ProdiTI.MAHASISWA (NIM, NamaMhs, AlamatMhs, Sex, PhoneMhs)" + " values(@nim,nma,alamat,jk,phn)";
+            MySqlCommand cmd = new MySqlCommand(str, con);
+            cmd.CommandText = str;
+
+            cmd.Parameters.Add(new MySqlParameter("nim", NIM));
+            cmd.Parameters.Add(new MySqlParameter("nma", NmaMhs));
+            cmd.Parameters.Add(new MySqlParameter("alamat", TglLahir));
+     
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Data Berhasil Ditambahkan");
         }
     }
 }
